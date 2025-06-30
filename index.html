@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aspirants Library | Educate a Woman, Empower a Generation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#fef2f2',
+              100: '#fee2e2',
+              200: '#fecaca',
+              300: '#fca5a5',
+              400: '#f87171',
+              500: '#ef4444',
+              600: '#dc2626',
+              700: '#b91c1c',
+              800: '#991b1b',
+              900: '#7f1d1d',
+            },
+            secondary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            accent: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Playfair Display', 'serif'],
+            arabic: ['Amiri', 'serif']
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'fade-in': 'fadeIn 1s ease-out forwards',
+            'pulse-slow': 'pulse 6s infinite'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' }
+            },
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      position: relative;
+      overflow-x: hidden;
+    }
+    .text-stroke {
+      -webkit-text-stroke: 1px rgba(0,0,0,0.1);
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #ef4444 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .quran-verse {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .quran-verse:before {
+      content: '"';
+      position: absolute;
+      left: 0;
+      top: -0.5rem;
+      font-size: 4rem;
+      font-family: 'Playfair Display', serif;
+      color: rgba(14, 165, 233, 0.2);
+    }
+    .scroll-indicator {
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+      40% {transform: translateY(-20px);}
+      60% {transform: translateY(-10px);}
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .parallax-bg {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .site-bg-logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: url('logo.png') center center no-repeat;
+      background-size: 40vw;
+      opacity: 0.06;
+      pointer-events: none;
+      animation: pulse-slow 15s infinite;
+    }
+    .logo-watermark {
+      position: absolute;
+      opacity: 0.03;
+      z-index: 0;
+      animation: pulse-slow 12s infinite;
+    }
+    .nav-blur {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      background-color: rgba(255, 255, 255, 0.85);
+    }
+    .hero-overlay {
+      background: linear-gradient(135deg, rgba(224, 242, 254, 0.9) 0%, rgba(221, 214, 254, 0.9) 100%);
+    }
+    .section-divider {
+      height: 100px;
+      background: linear-gradient(to bottom right, transparent 49%, white 50%), 
+                  linear-gradient(to top right, white 49%, transparent 50%);
+    }
+    .testimonial-quote:before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 0;
+      font-size: 5rem;
+      color: rgba(14, 165, 233, 0.1);
+      font-family: 'Playfair Display', serif;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="antialiased text-gray-800">
+  <!-- Floating decorative elements -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="absolute top-1/4 left-10 w-16 h-16 rounded-full bg-primary-200 opacity-20 blur-xl animate-float"></div>
+    <div class="absolute top-1/3 right-20 w-24 h-24 rounded-full bg-accent-300 opacity-15 blur-xl animate-float animation-delay-2000"></div>
+    <div class="absolute bottom-1/4 left-1/3 w-20 h-20 rounded-full bg-secondary-300 opacity-15 blur-xl animate-float animation-delay-3000"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="fixed w-full z-50 nav-blur shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="p-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full">
+          <div class="bg-white rounded-full p-1 shadow-sm ring-1 ring-gray-100">
+            <img src="logo.png" alt="Aspirants Library Logo" class="h-10 w-10 object-contain rounded-full" />
+          </div>
+        </div>
+        <h1 class="text-2xl font-bold font-display tracking-tight gradient-text">Aspirants Library</h1>
+      </div>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#about" class="text-gray-700 hover:text-primary-600 transition font-medium relative group">
+          About
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#facilities" class="text-gray-700 hover:text-primary-600 transition font-medium relative group">
+          Facilities
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#membership" class="text-gray-700 hover:text-primary-600 transition font-medium relative group">
+          Membership
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#contact" class="text-gray-700 hover:text-primary-600 transition font-medium relative group">
+          Contact
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#membership" class="bg-gradient-to-r from-primary-600 to-accent-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-primary-200">
+          Join Now
+        </a>
+      </nav>
+      <button class="md:hidden text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <div class="site-bg-logo"></div>
+    
+    <div class="absolute inset-0 hero-overlay z-0"></div>
+    
+    <div class="max-w-6xl mx-auto px-6 relative z-10 text-center py-32">
+      <h2 class="text-5xl md:text-7xl font-display font-bold mb-8 leading-tight">
+        <span class="gradient-text">Educate</span> <br>a Women <span class="text-stroke">Empower a generation</span>
+      </h2>
+      <p class="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
+        When you educate a woman, you uplift an entire generation. Join us in building a brighter future through knowledge and community.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#membership" class="bg-gradient-to-r from-primary-600 to-accent-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-md shadow-primary-200/50">
+          Become a Member <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#about" class="border-2 border-primary-600 text-primary-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-primary-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-sm">
+          Learn More <i class="fas fa-book-open"></i>
+        </a>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
+      <a href="#about" class="text-gray-600 hover:text-primary-600 transition">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider relative z-10"></div>
+
+  <!-- About Section -->
+  <section id="about" class="py-28 px-6 max-w-6xl mx-auto relative bg-white">
+    <div class="absolute -top-20 left-0 right-0 h-20" id="about-anchor"></div>
+    
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="animate-fade-in" style="animation-delay: 0.2s">
+        <h3 class="text-3xl md:text-4xl font-display font-semibold mb-6 text-primary-800">
+          <span class="gradient-text">Our Mission at Aspirants Library</span> 
+        </h3>
+        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+          Aspirants Library is a peaceful, women-only study space designed to support focused learning and personal growth. With comfortable private  space, a distraction-free environment, and a commitment to safety and security, it offers the perfect atmosphere for students, professionals, and aspirants preparing for competitive exams. This is not just a place to study — it's a space where women can pursue their goals with confidendtly and consistently, .
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <div class="bg-primary-50 px-4 py-2 rounded-full flex items-center gap-2 border border-primary-100">
+            <div class="w-2 h-2 rounded-full bg-primary-600"></div>
+            <span class="text-sm font-medium text-primary-800">Faith-Centered</span>
+          </div>
+          <div class="bg-accent-50 px-4 py-2 rounded-full flex items-center gap-2 border border-accent-100">
+            <div class="w-2 h-2 rounded-full bg-accent-600"></div>
+            <span class="text-sm font-medium text-accent-800">Empowering</span>
+          </div>
+          <div class="bg-secondary-50 px-4 py-2 rounded-full flex items-center gap-2 border border-secondary-100">
+            <div class="w-2 h-2 rounded-full bg-secondary-600"></div>
+            <span class="text-sm font-medium text-secondary-800">Inclusive</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative animate-fade-in" style="animation-delay: 0.4s">
+        <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-w-4 aspect-h-3 border-8 border-white">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+               alt="Women studying together" 
+               class="w-full h-full object-cover rounded-lg transform hover:scale-105 transition duration-1000">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-lg"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <p class="font-display text-xl">"Seeking knowledge is obligatory upon every Muslim"</p>
+            <p class="text-sm opacity-80">— Prophet Muhammad (ﷺ)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-gradient-to-br from-primary-50 to-white relative">
+    <div class="max-w-6xl mx-auto px-6 relative">
+      <div class="text-center mb-16 animate-fade-in">
+        <h3 class="text-3xl md:text-4xl font-display font-semibold mb-4 text-primary-800">
+          Why Choose <span class="gradient-text">Aspirants</span>
+        </h3>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          We've carefully designed every aspect of our library to create the perfect environment for focused learning and personal growth.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-8 shadow-md transition-all duration-300 feature-card animate-fade-in border border-gray-100" style="animation-delay: 0.2s">
+          <div class="w-14 h-14 rounded-lg bg-primary-100 flex items-center justify-center mb-6 text-primary-600 border border-primary-200">
+            <i class="fas fa-mosque text-2xl"></i>
+          </div>
+          <h4 class="text-xl font-display font-medium mb-3 text-gray-800">Faith-Centered Environment</h4>
+          <p class="text-gray-600">
+            Our space integrates Islamic values with academic pursuit, featuring prayer areas and Quranic inspiration throughout.
+          </p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-8 shadow-md transition-all duration-300 feature-card animate-fade-in border border-gray-100" style="animation-delay: 0.4s">
+          <div class="w-14 h-14 rounded-lg bg-accent-100 flex items-center justify-center mb-6 text-accent-600 border border-accent-200">
+            <i class="fas fa-user-graduate text-2xl"></i>
+          </div>
+          <h4 class="text-xl font-display font-medium mb-3 text-gray-800">Academic Excellence</h4>
+          <p class="text-gray-600">
+            Premium study facilities with high-speed internet, reference materials, and comfortable workspaces designed for productivity.
+          </p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-8 shadow-md transition-all duration-300 feature-card animate-fade-in border border-gray-100" style="animation-delay: 0.6s">
+          <div class="w-14 h-14 rounded-lg bg-secondary-100 flex items-center justify-center mb-6 text-secondary-600 border border-secondary-200">
+            <i class="fas fa-users text-2xl"></i>
+          </div>
+          <h4 class="text-xl font-display font-medium mb-3 text-gray-800">Supportive Community</h4>
+          <p class="text-gray-600">
+            Connect with like-minded peers through study groups, mentorship programs, and educational workshops.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities Section -->
+  <section id="facilities" class="py-28 px-6 bg-white relative">
+    <div class="absolute -top-20 left-0 right-0 h-20" id="facilities-anchor"></div>
+    
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 animate-fade-in">
+        <h3 class="text-3xl md:text-4xl font-display font-semibold mb-4 text-primary-800">
+          Our <span class="gradient-text">Facilities</span>
+        </h3>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Designed to provide everything you need for productive study sessions in a comfortable environment.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        <div class="animate-fade-in" style="animation-delay: 0.2s">
+          <div class="rounded-2xl overflow-hidden shadow-lg h-80 border-8 border-white">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
+                 alt="Study area" 
+                 class="w-full h-full object-cover transform hover:scale-105 transition duration-1000">
+          </div>
+        </div>
+        
+        <div class="animate-fade-in" style="animation-delay: 0.4s">
+          <div class="h-full flex flex-col justify-center">
+            <h4 class="text-2xl font-display font-medium mb-6 text-gray-800">Facilities</h4>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div class="mt-1 text-primary-600">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <span class="text-gray-700">Quiet individual desks</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="mt-1 text-primary-600">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <span class="text-gray-700">Wi-Fi and charging points</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="mt-1 text-primary-600">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <span class="text-gray-700">Islamic bookshelf corner</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="mt-1 text-primary-600">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <span class="text-gray-700">Air-conditioned environment</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="mt-1 text-primary-600">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <span class="text-gray-700">Prayer & wudu space</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="animate-fade-in order-2 md:order-1" style="animation-delay: 0.6s">
+          <div class="h-full flex flex-col justify-center">
+            <h4 class="text-2xl font-display font-medium mb-6 text-gray-800">Spiritual Amenities</h4>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div class="mt-1 text-primary-600">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <span class="text-gray-700">Dedicated prayer area, along with access to the Quran, Hadith, and a curated collection of Islamic books to support spiritual growth.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="animate-fade-in order-1 md:order-2" style="animation-delay: 0.8s">
+          <div class="rounded-2xl overflow-hidden shadow-lg h-80 border-8 border-white">
+            <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfDB8fHx8fA%3D%3D" 
+                 alt="Quran" 
+                 class="w-full h-full object-cover transform hover:scale-105 transition duration-1000">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quranic Inspiration Section -->
+  <section class="py-28 px-6 bg-gradient-to-br from-primary-900 to-primary-700 text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: url('https://images.unsplash.com/photo-1566669437687-7040a6926753?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80'); background-size: cover;"></div>
+    
+    <div class="max-w-4xl mx-auto relative z-10">
+      <div class="text-center mb-16 animate-fade-in">
+        <h3 class="text-3xl md:text-4xl font-display font-semibold mb-4">
+          <span class="gradient-text" style="background: linear-gradient(90deg, #fff 0%, #a78bfa 100%); -webkit-background-clip: text; background-clip: text;">Divine Inspiration</span>
+        </h3>
+        <p class="text-lg opacity-90 max-w-2xl mx-auto">
+          The Quran reminds us of the value of knowledge and the honored status of believers.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 animate-fade-in" style="animation-delay: 0.2s">
+          <div class="quran-verse mb-4">
+            <p class="text-lg font-medium mb-2">"Read! In the name of your Lord who created."</p>
+            <p class="text-sm opacity-80 font-arabic text-right">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ</p>
+            <p class="text-sm opacity-80">— Qur'an 96:1</p>
+          </div>
+          <p class="opacity-90">
+            The first verse revealed to Prophet Muhammad (ﷺ) emphasizes the importance of reading and seeking knowledge.
+          </p>
+        </div>
+        
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 animate-fade-in" style="animation-delay: 0.4s">
+          <div class="quran-verse mb-4">
+            <p class="text-lg font-medium mb-2">"Allah will raise those who have believed among you and those who were given knowledge by degrees."</p>
+            <p class="text-sm opacity-80 font-arabic text-right">يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ</p>
+            <p class="text-sm opacity-80">— Qur'an 58:11</p>
+          </div>
+          <p class="opacity-90">
+            Allah promises elevation in status for both faith and knowledge, showing their interconnected importance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Membership Section -->
+  <section id="membership" class="py-28 px-6 bg-gray-50 relative">
+    <div class="absolute -top-20 left-0 right-0 h-20" id="membership-anchor"></div>
+    
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="animate-fade-in" style="animation-delay: 0.2s">
+          <h3 class="text-3xl md:text-4xl font-display font-semibold mb-6 text-primary-800">
+            Become a <span class="gradient-text">Member</span>
+          </h3>
+          <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+            Join our community of ambitious young women dedicated to academic excellence and personal growth in a faith-affirming environment.
+          </p>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-4">
+              <div class="mt-1 text-primary-600">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-800">Affordable Plans</h4>
+                <p class="text-gray-600 text-sm">Flexible membership options for students of all levels.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="mt-1 text-primary-600">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-800">Safe Environment</h4>
+                <p class="text-gray-600 text-sm">24/7 security and female-only staff for your comfort.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="mt-1 text-primary-600">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-800">Community Events</h4>
+                <p class="text-gray-600 text-sm">Regular workshops, lectures, and study groups.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="animate-fade-in" style="animation-delay: 0.4s">
+          <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200">
+            <div class="p-8">
+              <h4 class="text-2xl font-display font-medium mb-6 text-center text-gray-800">Membership Application</h4>
+              <div style="min-height:600px;">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe9DOtvL-9r_67lnsGAA5JwFdvk72OpipALjbxjjxjl1jPSqA/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+              </div>
+            </div>
+            <div class="bg-gray-50 px-8 py-4 border-t border-gray-200 text-center">
+              <p class="text-sm text-gray-600">We'll contact you within 2 business days to complete your registration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-28 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 animate-fade-in">
+        <h3 class="text-3xl md:text-4xl font-display font-semibold mb-4 text-primary-800">
+          What Our <span class="gradient-text">Members</span> Say
+        </h3>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Hear from the young women who have found a second home at Aspirants Library.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-xl p-8 animate-fade-in relative border border-gray-200" style="animation-delay: 0.2s">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-500">
+              <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Aisha Khan" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-800">Aisha Khan</h4>
+              <p class="text-sm text-gray-600">Medical Student</p>
+            </div>
+          </div>
+          <div class="text-gray-700 testimonial-quote relative pl-4">
+            <p>"Aspirants Library has been a game-changer for my studies. The peaceful environment helps me focus, and having a prayer space means I don't have to interrupt my study flow."</p>
+          </div>
+          <div class="mt-4 flex gap-1 text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 rounded-xl p-8 animate-fade-in relative border border-gray-200" style="animation-delay: 0.4s">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-500">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Fatima Ahmed" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-800">Fatima Ahmed</h4>
+              <p class="text-sm text-gray-600">Engineering Student</p>
+            </div>
+          </div>
+          <div class="text-gray-700 testimonial-quote relative pl-4">
+            <p>"I've made lifelong friends here while preparing for my exams. The library's resources and the supportive community have been invaluable to my academic journey."</p>
+          </div>
+          <div class="mt-4 flex gap-1 text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 rounded-xl p-8 animate-fade-in relative border border-gray-200" style="animation-delay: 0.6s">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-500">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Zainab Hussain" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-800">Zainab Hussain</h4>
+              <p class="text-sm text-gray-600">Law Student</p>
+            </div>
+          </div>
+          <div class="text-gray-700 testimonial-quote relative pl-4">
+            <p>"As a law student, I need long hours of focused study. The library's quiet zones and the availability of Islamic books make it the perfect place for both my academic and spiritual growth."</p>
+          </div>
+          <div class="mt-4 flex gap-1 text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-28 px-6 bg-gradient-to-br from-primary-900 to-primary-700 text-white relative overflow-hidden">
+    <div class="absolute -top-20 left-0 right-0 h-20" id="contact-anchor"></div>
+    <div class="absolute inset-0 opacity-10" style="background-image: url('https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80'); background-size: cover;"></div>
+    
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="grid md:grid-cols-2 gap-16">
+        <div class="animate-fade-in" style="animation-delay: 0.2s">
+          <h3 class="text-3xl md:text-4xl font-display font-semibold mb-6">
+            Get in <span class="gradient-text" style="background: linear-gradient(90deg, #fff 0%, #a78bfa 100%); -webkit-background-clip: text; background-clip: text;">Touch</span>
+          </h3>
+          <p class="text-lg opacity-90 mb-8 leading-relaxed">
+            We'd love to hear from you! Whether you have questions about membership, facilities, or just want to visit, our team is here to help.
+          </p>
+          
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="mt-1 text-primary-300">
+                <i class="fas fa-map-marker-alt text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-lg mb-1">Our Location</h4>
+                <p class="opacity-90">123 Knowledge Street, Mau, Uttar Pradesh, India</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="mt-1 text-primary-300">
+                <i class="fas fa-phone-alt text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-lg mb-1">Phone</h4>
+                <p class="opacity-90">+91-XXXXXXXXXX</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="mt-1 text-primary-300">
+                <i class="fas fa-envelope text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-lg mb-1">Email</h4>
+                <p class="opacity-90">aspirants.library@email.com</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="mt-1 text-primary-300">
+                <i class="fas fa-clock text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-lg mb-1">Hours</h4>
+                <p class="opacity-90">Monday-Saturday: 8:00 AM - 10:00 PM</p>
+                <p class="opacity-90">Sunday: 10:00 AM - 8:00 PM</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8 flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition flex items-center justify-center text-lg">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition flex items-center justify-center text-lg">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition flex items-center justify-center text-lg">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="animate-fade-in" style="animation-delay: 0.4s">
+          <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200">
+            <div class="p-8">
+              <h4 class="text-2xl font-display font-medium mb-6 text-center text-gray-800">Send Us a Message</h4>
+              <form class="space-y-5">
+                <div>
+                  <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                  <input type="text" id="contact-name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition" placeholder="Your name">
+                </div>
+                <div>
+                  <label for="contact-email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                  <input type="email" id="contact-email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition" placeholder="your@email.com">
+                </div>
+                <div>
+                  <label for="contact-subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                  <input type="text" id="contact-subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition" placeholder="Subject">
+                </div>
+                <div>
+                  <label for="contact-message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                  <textarea id="contact-message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition" placeholder="Your message"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-accent-600 text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="h-96 w-full relative">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.102370777529!2d83.5596233150426!3d26.84107298316196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3991a5d9b0a7c7a5%3A0x9b8c1a1d1b1b1b1b!2sMau%2C%20Uttar%20Pradesh%2C%20India!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+      width="100%" 
+      height="100%" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy"
+      class="absolute inset-0"
+    ></iframe>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary-900/30 to-transparent"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-12">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-2 bg-white rounded-lg">
+              <img src="logo.png" alt="Aspirants Library Logo" class="h-10 w-10 object-contain" />
+            </div>
+            <h3 class="text-xl font-display font-bold">Aspirants Library</h3>
+          </div>
+          <p class="text-gray-400 mb-6">
+            A peaceful study hall dedicated to empowering young women through knowledge, faith, and community.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-display font-medium mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+            <li><a href="#facilities" class="text-gray-400 hover:text-white transition">Our Facilities</a></li>
+            <li><a href="#membership" class="text-gray-400 hover:text-white transition">Membership</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Events</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-display font-medium mb-6">Facilities</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Study Spaces</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Library Resources</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Prayer Room</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Café</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition">Workshops</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-display font-medium mb-6">Newsletter</h4>
+          <p class="text-gray-400 mb-4">
+            Subscribe to our newsletter for updates on events and new resources.
+          </p>
+          <form class="flex">
+            <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+            <button type="submit" class="bg-primary-600 hover:bg-primary-700 px-4 py-2 rounded-r-lg transition">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-500 text-sm">
+          &copy; 2025 Aspirants Library. All rights reserved.
+        </p>
+        <div class="flex gap-6 mt-4 md:mt-0">
+          <a href="#" class="text-gray-500 hover:text-white text-sm transition">Privacy Policy</a>
+          <a href="#" class="text-gray-500 hover:text-white text-sm transition">Terms of Service</a>
+          <a href="#" class="text-gray-500 hover:text-white text-sm transition">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-gradient-to-br from-primary-600 to-accent-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 opacity-0 invisible hover:shadow-xl hover:scale-105">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Back to top button
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.remove('opacity-0', 'invisible');
+        backToTopButton.classList.add('opacity-100', 'visible');
+      } else {
+        backToTopButton.classList.remove('opacity-100', 'visible');
+        backToTopButton.classList.add('opacity-0', 'invisible');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer for animations
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.animate-fade-in');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      elements.forEach(element => {
+        observer.observe(element);
+      });
+    };
+    
+    // Run when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      animateOnScroll();
+    });
+  </script>
+</body>
+</html>
