@@ -137,7 +137,7 @@
       height: 100%;
       z-index: 1;
       background: url('logo.png') center center no-repeat;
-      background-size: 40vw;
+      background-size: 55vw;
       opacity: 0.06;
       pointer-events: none;
       animation: pulse-slow 15s infinite;
@@ -187,7 +187,7 @@
       <div class="flex items-center gap-3">
         <div class="p-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full">
           <div class="bg-white rounded-full p-1 shadow-sm ring-1 ring-gray-100">
-            <img src="logo.png" alt="Aspirants Library Logo" class="h-10 w-10 object-contain rounded-full" />
+            <img src="logo.png" alt="Aspirants Library Logo" class="h-16 w-16 object-contain rounded-full" />
           </div>
         </div>
         <h1 class="text-2xl font-bold font-display tracking-tight gradient-text">Aspirants Library</h1>
@@ -209,8 +209,8 @@
           Contact
           <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
         </a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe9DOtvL-9r_67lnsGAA5JwFdvk72OpipALjbxjjxjl1jPSqA/viewform" target="_blank" rel="noopener" class="bg-gradient-to-r from-primary-600 to-accent-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-primary-200">
-          Join Now
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe9DOtvL-9r_67lnsGAA5JwFdvk72OpipALjbxjjxjl1jPSqA/viewform" target="_blank" rel="noopener" class="bg-gradient-to-r from-primary-600 to-accent-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-md shadow-primary-200/50">
+          Become a Member <i class="fas fa-arrow-right"></i>
         </a>
       </nav>
       <button class="md:hidden text-gray-700 focus:outline-none">
@@ -229,7 +229,7 @@
     
     <div class="max-w-6xl mx-auto px-6 relative z-10 text-center py-32">
       <h2 class="text-5xl md:text-7xl font-display font-bold mb-8 leading-tight">
-        <span class="gradient-text">Educate</span> <br>a Women <span class="text-stroke">Empower a generation</span>
+        <span class="gradient-text">Educate <br>a Women Empower a generation</span>
       </h2>
       <p class="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
         When you educate a woman, you uplift an entire generation. Join us in building a brighter future through knowledge and community.
@@ -244,9 +244,9 @@
       </div>
     </div>
     
-    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
-      <a href="#about" class="text-gray-600 hover:text-primary-600 transition">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator z-50">
+      <a href="#about" class="text-primary-700 hover:text-primary-600 transition drop-shadow-lg">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
       </a>
@@ -285,15 +285,17 @@
       </div>
       
       <div class="relative animate-fade-in" style="animation-delay: 0.4s">
-        <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-w-4 aspect-h-3 border-8 border-white">
-          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-               alt="Women studying together" 
-               class="w-full h-full object-cover rounded-lg transform hover:scale-105 transition duration-1000">
+        <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-w-4 aspect-h-3 border-8 border-white" id="about-carousel">
+          <img src="image1.jpg" alt="Women studying together" class="carousel-image w-full h-full object-cover rounded-lg transition duration-700">
+          <button id="carousel-left" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/70 rounded-full p-2 shadow hover:bg-white z-10">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button id="carousel-right" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/70 rounded-full p-2 shadow hover:bg-white z-10">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2" id="carousel-dots"></div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-lg"></div>
-          <div class="absolute bottom-6 left-6 text-white">
-            <p class="font-display text-xl">"Seeking knowledge is obligatory upon every Muslim"</p>
-            <p class="text-sm opacity-80">— Prophet Muhammad (ﷺ)</p>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -323,16 +325,6 @@
         </div>
         
         <div class="bg-white rounded-xl p-8 shadow-md transition-all duration-300 feature-card animate-fade-in border border-gray-100" style="animation-delay: 0.4s">
-          <div class="w-14 h-14 rounded-lg bg-accent-100 flex items-center justify-center mb-6 text-accent-600 border border-accent-200">
-            <i class="fas fa-user-graduate text-2xl"></i>
-          </div>
-          <h4 class="text-xl font-display font-medium mb-3 text-gray-800">Academic Excellence</h4>
-          <p class="text-gray-600">
-            Premium study facilities with high-speed internet, reference materials, and comfortable workspaces designed for productivity.
-          </p>
-        </div>
-        
-        <div class="bg-white rounded-xl p-8 shadow-md transition-all duration-300 feature-card animate-fade-in border border-gray-100" style="animation-delay: 0.6s">
           <div class="w-14 h-14 rounded-lg bg-secondary-100 flex items-center justify-center mb-6 text-secondary-600 border border-secondary-200">
             <i class="fas fa-users text-2xl"></i>
           </div>
@@ -505,102 +497,11 @@
                 <p class="text-gray-600 text-sm">24/7 security and female-only staff for your comfort.</p>
               </div>
             </div>
-            <div class="flex items-start gap-4">
-              <div class="mt-1 text-primary-600">
-                <i class="fas fa-check-circle"></i>
-              </div>
-              <div>
-                <h4 class="font-medium text-gray-800">Community Events</h4>
-                <p class="text-gray-600 text-sm">Regular workshops, lectures, and study groups.</p>
-              </div>
-            </div>
           </div>
         </div>
         
         <div class="animate-fade-in" style="animation-delay: 0.4s">
           <!-- Membership application form removed as per user request -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="py-28 px-6 bg-white">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16 animate-fade-in">
-        <h3 class="text-3xl md:text-4xl font-display font-semibold mb-4 text-primary-800">
-          What Our <span class="gradient-text">Members</span> Say
-        </h3>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Hear from the young women who have found a second home at Aspirants Library.
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gray-50 rounded-xl p-8 animate-fade-in relative border border-gray-200" style="animation-delay: 0.2s">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-500">
-              <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Aisha Khan" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h4 class="font-medium text-gray-800">Aisha Khan</h4>
-              <p class="text-sm text-gray-600">Medical Student</p>
-            </div>
-          </div>
-          <div class="text-gray-700 testimonial-quote relative pl-4">
-            <p>"Aspirants Library has been a game-changer for my studies. The peaceful environment helps me focus, and having a prayer space means I don't have to interrupt my study flow."</p>
-          </div>
-          <div class="mt-4 flex gap-1 text-yellow-400">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-        </div>
-        
-        <div class="bg-gray-50 rounded-xl p-8 animate-fade-in relative border border-gray-200" style="animation-delay: 0.4s">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-500">
-              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Fatima Ahmed" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h4 class="font-medium text-gray-800">Fatima Ahmed</h4>
-              <p class="text-sm text-gray-600">Engineering Student</p>
-            </div>
-          </div>
-          <div class="text-gray-700 testimonial-quote relative pl-4">
-            <p>"I've made lifelong friends here while preparing for my exams. The library's resources and the supportive community have been invaluable to my academic journey."</p>
-          </div>
-          <div class="mt-4 flex gap-1 text-yellow-400">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-        </div>
-        
-        <div class="bg-gray-50 rounded-xl p-8 animate-fade-in relative border border-gray-200" style="animation-delay: 0.6s">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-500">
-              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Zainab Hussain" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h4 class="font-medium text-gray-800">Zainab Hussain</h4>
-              <p class="text-sm text-gray-600">Law Student</p>
-            </div>
-          </div>
-          <div class="text-gray-700 testimonial-quote relative pl-4">
-            <p>"As a law student, I need long hours of focused study. The library's quiet zones and the availability of Islamic books make it the perfect place for both my academic and spiritual growth."</p>
-          </div>
-          <div class="mt-4 flex gap-1 text-yellow-400">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
         </div>
       </div>
     </div>
@@ -628,7 +529,7 @@
               </div>
               <div>
                 <h4 class="font-medium text-lg mb-1">Our Location</h4>
-                <p class="opacity-90">123 Knowledge Street, Mau, Uttar Pradesh, India</p>
+                <p class="opacity-90">318,Qasimpura infront of Darul Hadees (Fardeen Traders) Mau, Uttar Pradesh.</p>
               </div>
             </div>
             
@@ -638,7 +539,7 @@
               </div>
               <div>
                 <h4 class="font-medium text-lg mb-1">Phone</h4>
-                <p class="opacity-90">+91-XXXXXXXXXX</p>
+                <p class="opacity-90">+91-7275555350</p>
               </div>
             </div>
             
@@ -658,22 +559,9 @@
               </div>
               <div>
                 <h4 class="font-medium text-lg mb-1">Hours</h4>
-                <p class="opacity-90">Monday-Saturday: 8:00 AM - 10:00 PM</p>
-                <p class="opacity-90">Sunday: 10:00 AM - 8:00 PM</p>
+                <p class="opacity-90">Visiting Hours 4-7 pm<br>Library Hours - Open daily - 6am -9pm</p>
               </div>
             </div>
-          </div>
-          
-          <div class="mt-8 flex gap-4">
-            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition flex items-center justify-center text-lg">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition flex items-center justify-center text-lg">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition flex items-center justify-center text-lg">
-              <i class="fab fa-twitter"></i>
-            </a>
           </div>
         </div>
         
@@ -712,47 +600,34 @@
   <!-- Map Section -->
   <section class="h-96 w-full relative">
     <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.102370777529!2d83.5596233150426!3d26.84107298316196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3991a5d9b0a7c7a5%3A0x9b8c1a1d1b1b1b1b!2sMau%2C%20Uttar%20Pradesh%2C%20India!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3587.734054639355!2d83.5572446745002!3d25.943955701051816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39918b2aca09707b%3A0x830d3ee919ef0ed0!2sFardeen%20Traders!5e0!3m2!1sen!2sin!4v1751441454128!5m2!1sen!2sin" 
       width="100%" 
       height="100%" 
       style="border:0;" 
       allowfullscreen="" 
       loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
       class="absolute inset-0"
     ></iframe>
     <div class="absolute inset-0 bg-gradient-to-t from-primary-900/30 to-transparent"></div>
   </section>
+  
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-white py-16 px-6">
     <div class="max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-4 gap-12">
-        <div>
-          <div class="flex items-center gap-3 mb-6">
-            <div class="p-2 bg-white rounded-lg">
-              <img src="logo.png" alt="Aspirants Library Logo" class="h-10 w-10 object-contain" />
-            </div>
-            <h3 class="text-xl font-display font-bold">Aspirants Library</h3>
-          </div>
-          <p class="text-gray-400 mb-6">
-            A peaceful study hall dedicated to empowering young women through knowledge, faith, and community.
-          </p>
-          <div class="flex gap-4">
-            <a href="#" class="text-gray-400 hover:text-white transition">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white transition">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white transition">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white transition">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
+      <div class="flex flex-col items-center gap-6 mb-6">
+        <div class="p-2 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center" style="width:14rem;height:14rem;">
+          <div class="bg-white rounded-full flex items-center justify-center" style="width:12.5rem;height:12.5rem;">
+            <img src="logo.png" alt="Aspirants Library Logo" class="h-52 w-52 object-contain rounded-full" />
           </div>
         </div>
-        
+        <h3 class="text-2xl font-display font-bold text-center">Aspirants Library</h3>
+      </div>
+      <p class="text-gray-400 mb-6 text-center">
+        A peaceful study hall dedicated to empowering young women through knowledge, faith, and community.
+      </p>
+      <div class="grid md:grid-cols-4 gap-12">
         <div>
           <h4 class="text-lg font-display font-medium mb-6">Quick Links</h4>
           <ul class="space-y-3">
@@ -770,23 +645,10 @@
             <li><a href="#" class="text-gray-400 hover:text-white transition">Study Spaces</a></li>
             <li><a href="#" class="text-gray-400 hover:text-white transition">Library Resources</a></li>
             <li><a href="#" class="text-gray-400 hover:text-white transition">Prayer Room</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition">Café</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition">Workshops</a></li>
           </ul>
         </div>
         
-        <div>
-          <h4 class="text-lg font-display font-medium mb-6">Newsletter</h4>
-          <p class="text-gray-400 mb-4">
-            Subscribe to our newsletter for updates on events and new resources.
-          </p>
-          <form class="flex">
-            <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
-            <button type="submit" class="bg-primary-600 hover:bg-primary-700 px-4 py-2 rounded-r-lg transition">
-              <i class="fas fa-paper-plane"></i>
-            </button>
-          </form>
-        </div>
+
       </div>
       
       <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
@@ -870,6 +732,56 @@
     document.addEventListener('DOMContentLoaded', () => {
       animateOnScroll();
     });
+    // 5 Unsplash images of women studying/reading, including the hijab image provided by the user
+    const images = [
+  "https://images.unsplash.com/photo-1600081687786-ce51e1e49ec7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0",
+  "https://images.unsplash.com/photo-1464983953574-0892a716854b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0",
+  "https://images.unsplash.com/photo-1586421730862-df21747c2bc1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d29tYW4lMjBpbiUyMGJsYWNrJTIwaGlqYWIlMjByZWFkaW5nJTIwYm9va3xlbnwwfDB8MHx8fDI%3D",
+ 
+];
+
+
+    let current = 0;
+
+    const imgEl = document.querySelector('#about-carousel .carousel-image');
+    const leftBtn = document.getElementById('carousel-left');
+    const rightBtn = document.getElementById('carousel-right');
+    const dotsContainer = document.getElementById('carousel-dots');
+
+    function updateCarousel() {
+      imgEl.src = images[current];
+      // Update dots
+      dotsContainer.innerHTML = images.map((_, idx) =>
+        `<span class="w-2 h-2 rounded-full ${idx === current ? 'bg-primary-600' : 'bg-white/60'} inline-block"></span>`
+      ).join('');
+    }
+
+    leftBtn.onclick = () => {
+      current = (current - 1 + images.length) % images.length;
+      updateCarousel();
+    };
+    rightBtn.onclick = () => {
+      current = (current + 1) % images.length;
+      updateCarousel();
+    };
+
+    // Optional: click on dots to jump to image
+    dotsContainer.onclick = (e) => {
+      if (e.target.tagName === 'SPAN') {
+        current = Array.from(dotsContainer.children).indexOf(e.target);
+        updateCarousel();
+      }
+    };
+
+    // Auto-slide every 1.5 seconds
+    setInterval(() => {
+      current = (current + 1) % images.length;
+      updateCarousel();
+    }, 1500);
+
+    // Initialize
+    updateCarousel();
   </script>
 </body>
 </html>
